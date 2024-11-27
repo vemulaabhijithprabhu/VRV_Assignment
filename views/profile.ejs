@@ -1,0 +1,29 @@
+<%- include('./layouts/header') %>
+
+<h1><span class="goback" onclick="window.history.back()">←</span> Profile</h1>
+
+<div class="profile">
+  <div>
+    <p class="title">ID</p>
+    <p class="subtitle"><%= person.id %></p>
+  </div>
+  <div>
+    <p class="title">Email/username</p>
+    <p class="subtitle"><%= person.email %></p>
+  </div>
+  <div>
+    <p class="title">Role</p>
+    <p class="subtitle"><%= person.role %></p>
+  </div>
+  <div>
+    <p class="title">User object</p>
+    <pre class="subtitle"><%= person %></pre>
+  </div>
+</div>
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.shutterstock.com/shutterstock/videos/3404459391/preview/stock-footage-seamless-loop-blue-wavy-lines-binary-data-numbers-on-clean-white-web-technology-background.webm" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<%- include('./layouts/footer') %>

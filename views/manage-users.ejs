@@ -1,0 +1,42 @@
+<%- include ('layouts/header') %>
+<h1 class="table">Manage Users</h1>
+
+<table class="table">
+  <thead>
+    <th>id</th>
+    <th>email</th>
+    <th>role</th>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><a href="/admin/user/<%= user.id %>"><%= user.email %></a></td>
+      <td>
+        <form
+          action="/admin/update-role"
+          method="post"
+          class="manage-user-form"
+        >
+          <input type="hidden" name="id" value="<%= user.id %>" />
+          <select name="role" id="role">
+            <option value="ADMIN" <%= user.role === 'ADMIN' ? 'selected' : '' %> >Admin</option>
+            <option value="MODERATOR" <%= user.role === 'MODERATOR' ? 'selected' : '' %>>Moderator</option>
+            <option value="CLIENT" <%= user.role === 'CLIENT' ? 'selected' : '' %>>Client</option>
+          </select>
+          <input type="submit" value="update">
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.shutterstock.com/shutterstock/videos/3404459391/preview/stock-footage-seamless-loop-blue-wavy-lines-binary-data-numbers-on-clean-white-web-technology-background.webm" type="video/mp4">
+    
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<%- include ('layouts/footer') %>

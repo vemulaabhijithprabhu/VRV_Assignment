@@ -1,0 +1,38 @@
+<%- include('./layouts/header') %>
+
+<h1>Register</h1>
+<form action="/auth/register" method="post" class="lg-form">
+  <div>
+    <label for="email">Email/Username</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      value="<%= locals.email ? email : '' %>"
+    />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" />
+  </div>
+  <div>
+    <label for="password2">Confirm password</label>
+    <input type="password" name="password2" id="password2" />
+  </div>
+  <div>
+    <input type="submit" value="Register" />
+  </div>
+</form>
+<div>
+  <p>
+    Already have an account? <span><a href="/auth/login">Login</a></span>
+  </p>
+</div>
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.shutterstock.com/shutterstock/videos/3404459391/preview/stock-footage-seamless-loop-blue-wavy-lines-binary-data-numbers-on-clean-white-web-technology-background.webm" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<br />
+<%- include('./layouts/footer') %>

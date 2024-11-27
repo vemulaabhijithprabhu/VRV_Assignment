@@ -1,0 +1,17 @@
+<nav>
+  <h2>VRV Security Assignment</h2>
+  <ul>
+    <li><a href="/"><b>Home</b></a></li>
+    <% if (user) { %>
+    <li><a href="/user/profile"><b>Profile</b></a></li>
+    <% if (user.role === 'ADMIN') { %>
+    <li><a href="/admin/users"><b>Manage Users</b></a></li>
+    <% } %>
+    <li><a href="/auth/logout"><b>Logout</b></a></li>
+    <% } else { %>
+    <li><a href="/auth/register"><b>Register</b></a></li>
+    <li><a href="/auth/login"><b>Login</b></a></li>
+    <% } %>
+  </ul>
+</nav>
+<hr>
